@@ -72,7 +72,7 @@ footer {
 /* main {} */
 
 section, footer {
-    margin: var(--sp-5xl) 0;
+    padding: var(--sp-5xl) 0;
 }
 
 .brand {
