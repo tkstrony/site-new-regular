@@ -1,0 +1,35 @@
+/* Cyberpunk theme */
+[data-theme = 'cyberpunk'] {
+
+    --bg-color: var(--color-navy);
+    --text-color: var(--color-white);
+    --link-color: var(--color-orange);
+    --link-selected: var(--color-fuchsia);
+    --heading-color: var(--color-silver);
+    --btn-def-bg: var(--color-teal);
+    --btn-def-color: var(--color-black);
+    --shadow-color: var(--color-shadow-dm);
+    --outline-color: var(--color-violet);
+
+    .main-home .hero {
+        .random {
+            --outline-color: var(--color-secondary-30);
+        }
+    }
+
+    hr {
+        border-top: var(--sp-4xs) dotted var(--color-teal);
+    }
+
+    .logo._svg {
+        filter: invert(1);
+    }
+
+    .component_card {
+        background-color: var(--color-purple);
+        :where(img){
+            filter: drop-shadow(2px 4px 6px var(--bg-color));
+        }
+    }
+
+}

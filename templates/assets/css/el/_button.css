@@ -1,0 +1,82 @@
+/* buttons */
+button, .btn {
+    background: var(--btn-def-bg);
+    color: var(--btn-def-color);
+    display: inline-block;
+    padding: var(--sp-4xs) var(--sp-lg);
+    border-radius: var(--br);
+    font-size: var(--fs-sm);
+    margin: var(--sp-lg) var(--sp-3xs) var(--sp-lg) 0;
+    text-align: center;
+    text-decoration: none;
+    text-wrap: pretty;
+    box-shadow: var(--sh);
+    cursor: pointer;
+    transition: all 0.3s;
+    width: fit-content;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    /* Disabled button */
+    &:disabled, &.-disabled {
+        background-color: var(--color-contrast-90);
+        color: var(--color-contrast-60);
+        box-shadow: none;
+        cursor: not-allowed;
+    }
+
+    &.-xl {
+        padding: var(--sp-sm) var(--sp-6xl);
+        font-size: var(--fs-xl);
+    }
+    
+    &.-lg {
+        padding: var(--sp-2xs) var(--sp-5xl);
+        font-size: var(--fs-lg);
+    }
+    
+    &.-md {
+        padding: var(--sp-3xs) var(--sp-2xl);
+        font-size: var(--fs-md);
+    }
+    
+    &.-sm {
+        padding: var(--sp-5xs) var(--sp-xs);
+    }
+    
+    &.-xs {
+        padding: var(--sp-6xs) var(--sp-2xs);
+        font-size: var(--fs-xs);
+    }
+    
+    &.--2xs {
+        padding: var(--sp-7xs);
+        font-size: var(--fs-3xs);
+    }    
+
+    &.-link {
+        background: none;
+        box-shadow: none;
+        color: var(--link-color);
+        border: none;
+    }
+
+    &.-bg-none {
+        background: none;
+        box-shadow: none;
+        color: var(--text-color);
+    }
+
+    /* Icon button */
+    &.-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--sp-3xs);
+        padding: var(--sp-4xs) var(--sp-3xs);
+        &.dn {
+            display: none;
+        }
+    }
+}

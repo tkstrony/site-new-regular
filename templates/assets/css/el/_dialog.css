@@ -1,0 +1,41 @@
+/* Base styles for the dialog */
+dialog {
+    background-color: var(--bg-color);
+    border-radius: var(--br);
+    border: var(--sp-4xs) dashed var(--color-primary);
+    padding: var(--sp-xl);
+    opacity: 0;
+    position: fixed;
+    inset: 0; /** Allows flexible positioning **/
+    margin: auto;
+  
+    /* Default entrance animation */
+    transform: translateY(-20px);
+
+    /* Smooth transition effects */
+    &, &::backdrop {
+        transition: opacity 1s ease, transform 1s ease;
+    }
+}
+
+/* Dialog visibility when opened */
+dialog[open] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Backdrop styling */
+dialog[open]::backdrop {
+    opacity: 0.8;
+    transition: opacity 1s ease;
+}
+
+/* Entrance animation */
+@starting-style {
+    dialog[open] {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+

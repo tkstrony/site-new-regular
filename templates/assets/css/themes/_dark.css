@@ -1,0 +1,14 @@
+/* Dark theme */
+[data-theme = 'dark'] {
+    --bg-color: var(--color-black);
+    --text-color: var(--color-white);
+    --link-color: var(--color-orange);
+    --link-selected: var(--color-red);
+    --heading-color: var(--color-off-white);
+    --btn-def-bg: var(--color-shadow-stealthy);
+    --btn-def-color: var(--color-white);
+    --shadow-color: var(--color-shadow-dm);
+    .logo._svg {
+        filter: invert(1);
+    }
+}

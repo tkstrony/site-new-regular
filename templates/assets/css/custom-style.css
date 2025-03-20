@@ -1,0 +1,194 @@
+html {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    font-size: var(--bfs); /* base font size */
+
+    /* https://developer.chrome.com/docs/web-platform/view-transitions/cross-document?hl=pl */
+    @view-transition {
+        navigation: auto;
+    }
+
+    /* focus visible */
+    button,
+    input,
+    textarea,
+    select,
+    a[href],
+    .btn,
+    .link {
+        &:focus-visible {
+            outline: var(--sp-5xs) dashed var(--text-color) !important;
+        }
+    }
+
+    /* https://www.magicpattern.design/tools/css-backgrounds */
+    &::after {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: 0.3;
+        z-index: -1;
+        background-image: radial-gradient(var(--text-color) 1px, transparent 1px);
+        background-size: 38px 38px;
+        filter: blur(1px);
+    }
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-md);
+    letter-spacing: var(--sp-6xs);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: var(--sp-sm);
+
+    /* desktops */
+    @media (min-width: 64rem) {
+        margin: auto;
+        max-width: var(--mw-xl);
+        height: 100vh;
+    }
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-xs);
+}
+
+footer {
+    display: grid;
+    justify-items: center;
+    gap: var(--sp-3xl);
+    padding: var(--sp-md);
+}
+
+/* main {} */
+
+section, footer {
+    margin: var(--sp-5xl) 0;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.hero {
+    margin: var(--sp-lg) 0;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3xs);
+    font-size: var(--fs-md);
+    align-items: center;
+    margin-bottom: var(--sp-xl);
+    .actual-page {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @media (min-width: 64rem) {
+        margin: var(--sp-2xl);
+    }
+}
+
+/* Footer */
+.info-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-6xl);
+
+    @media (min-width: 64rem) {
+        justify-content: space-around;
+    }
+
+    .socialProfiles ul {
+        list-style: none;
+        margin-left: 0;
+        gap: var(--sp-2xs);
+        display: flex;
+        flex-direction: column;
+        li a {
+            display: flex;
+            align-items: center;
+        }
+    }
+    
+    /* multi-column layout  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_multicol_layout/Basic_concepts 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_multicol_layout */
+    .usefulLinks ul {
+        list-style: none !important;
+        columns: 1;
+        column-width: auto;
+        column-gap: var(--sp-5xl);
+        column-rule: var(--sp-5xs) dashed var(--color-contrast-80);
+    
+        @media (min-width: 48rem) {
+            columns: 3;
+        }
+    
+        @media (min-width: 64rem) {
+            columns: 4;
+        }
+    }
+}
+
+.copyright {
+    letter-spacing: var(--sp-4xs);
+}
+
+/* scrool top */
+.to-top {
+    position: fixed !important;
+    bottom: var(--sp-2xs);
+    right: var(--sp-3xl);
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* Debug region */
+.pw-debug {
+	background-color: var(--color-silver);
+	color: var(--color-black);
+	padding: var(--sp-md);
+	margin: var(--sp-lg);
+}
+
+/* admin actions */
+.adminActions {
+    position: fixed;
+    top: 0;
+    left: var(--sp-xl);
+    display: grid;
+	/* z-index: 2000; */
+}
+
+/* categories nav */
+/* .categories-nav {
+    overflow: auto;
+    display: block !important;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    a:not(:first-child) {
+        &::before {
+            content: "/ ";
+            color: var(--color-accent-40);
+        }
+    }
+    @media (min-width: 48rem) {
+        max-width: var(--mw-md);
+    }
+} */

@@ -1,0 +1,38 @@
+<mjml>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <!-- Logo with Link -->
+        <mj-image href="{$siteUrl}" src="{$logoURL}" alt="Logo" width="150px" align="center" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <!-- Site name -->
+        <mj-text font-size="24px" font-family="Helvetica, Arial, sans-serif" align="center" color="#333333">
+          {$siteName}
+        </mj-text>
+        
+        <!-- Welcome content -->
+        <mj-text font-size="16px" font-family="Helvetica, Arial, sans-serif" align="center" color="#555555">
+          {$welcome}
+        </mj-text>
+        
+        <!-- Links / buttons -->
+        <mj-button href="{$callToActionLink}" background-color="#4CAF50" color="#ffffff" font-size="16px" align="center">
+          {$callToActionTitle}
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <!-- Footer -->
+        <mj-text font-size="12px" font-family="Helvetica, Arial, sans-serif" align="center" color="#999999">
+          &copy; {$year} - <a href="{$siteUrl}" style="color: #999999;">{$siteName}</a>. {$allRights}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

@@ -1,0 +1,163 @@
+:root {
+    --outline-size: var(--sp-5xs);
+    --outline-color: var(--color-accent-60);
+    --outline-offset: var(--sp-5xs);
+    --outline-br: var(--br);
+}
+
+/* usually for - buttons cards */
+.-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.-accent {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.-warning {
+    background-color: var(--color-warning);
+    color: var(--color-white);
+}
+
+.-success {
+    background-color: var(--color-success);
+    color: var(--color-white);
+}
+
+.-error {
+    background-color: var(--color-error);
+    color: var(--color-white);
+}
+
+/* display */
+.dn {
+    display: none;
+}
+
+.db {
+    display: block;
+}
+
+.df {
+    display: flex;
+
+    &.-ac {
+        align-items: center;
+    }
+
+    &.-jc {
+        justify-content: center;
+    }
+}
+
+.dg {
+    display: grid;
+}
+
+/**
+ * This class makes an element responsive by adjusting its width based on the viewport size.
+ * 
+ * - `max-width: clamp(320px, 50%, 1200px)`:
+ *   - `320px` is the minimum width.
+ *   - `50%` is the preferred width (50% of the parent container).
+ *   - `1200px` is the maximum width.
+ * 
+ * - `margin: auto`: Centers the element horizontally within its container.
+ * 
+ * The element will be flexible, never smaller than 320px, and never wider than 1200px.
+ */
+
+.mw-responsive {
+    max-width: clamp(320px, 50%, 1200px);
+    margin: auto;
+}
+
+.mw-xl {
+    max-width: var(--mw-xl);
+    margin: auto;
+}
+
+.mw-lg {
+    max-width: var(--mw-lg);
+    margin: auto;
+}
+
+.mw-md {
+    max-width: var(--mw-md);
+    margin: auto;
+}
+
+.mw-sm {
+    max-width: var(--mw-sm);
+    margin: auto;
+}
+
+.mw-xs {
+    max-width: var(--mw-xs);
+    margin: auto;
+}
+
+.mw-2xs {
+    max-width: var(--mw-2xs);
+    margin: auto;
+}
+
+.mw-3xs {
+    max-width: var(--mw-3xs);
+    margin: auto;
+}
+
+.mw-4xs {
+    max-width: var(--mw-4xs);
+    margin: auto;
+}
+
+.mw-5xs {
+    max-width: var(--mw-5xs);
+    margin: auto;
+}
+
+
+/* overlay */
+.overlay {
+    background-color: color-mix(in srgb, var(--bg-color), transparent 15%);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 100dvh;
+    z-index: 1001;
+}
+
+/* custom outline */
+.outline, .title, section :first-child:where(h3) {
+    border-radius: var(--outline-br);
+    width: fit-content;
+    outline: var(--outline-size) dashed var(--outline-color);
+    outline-offset: var(--outline-offset);
+    margin: var(--sp-4xl) 0;
+    padding: var(--sp-sm);
+
+    &.-md {
+        --outline-size: var(--sp-2xs);
+        --outline-offset: var(--sp-sm);
+    }
+
+    &.-sm {
+        --outline-size: var(--sp-5xs);
+        --outline-offset: var(--sp-7xs);
+    }
+
+    &.-xs {
+        --outline-size: var(--sp-6xs);
+        --outline-offset: var(--sp-7xs);
+    }
+}

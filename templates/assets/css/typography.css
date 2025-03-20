@@ -1,0 +1,131 @@
+/* headings */
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+    color: var(--heading-color);
+    font-family: var(--font-secondary);
+    line-height: var(--lh-sm);
+    margin-top: var(--sp-2xl);
+    margin-bottom: var(--sp-xl);
+    word-break: break-word;
+}
+
+h1, .h1 {
+    font-size: var(--fs-2xl);
+    letter-spacing: var(--sp-3xs);
+}
+
+h2, .h2 {
+    font-size: var(--fs-xl);
+    letter-spacing: var(--sp-4xs);
+}
+
+h3, .h3 {
+    font-size: var(--fs-lg);
+}
+
+h4, .h4 {
+    font-size: var(--fs-md);
+}
+
+/* paragraph */
+p {
+    font-size: inherit;
+    margin: var(--sp-xl) 0;
+    line-height: var(--lh-md);
+    word-break: break-word; 
+}
+
+/* link */
+a, .link {
+    color: var(--link-color);
+    display: inline-block;
+    text-decoration: none;
+    transition: all .2s ease;
+    word-break: break-word;
+    font-size: inherit;
+
+   > * {
+        color: inherit;
+    }
+
+    &:hover {
+        opacity: 0.7;
+        cursor:pointer;
+    }
+}
+
+/* blockquote */
+blockquote {
+    color: var(--text-color);
+    font-style: italic;
+    font-size: var(--fs-lg);
+    padding: var(--sp-xs);
+    padding-left: var(--sp-xl);
+    border-radius: var(--br);
+    &:before {
+        color: var(--color-primary);
+        position: absolute;
+        transform: translate(-1.7rem, -1rem);
+        content: "\201C"; /* Unicode character for left double quotation mark */
+        font-size: var(--fs-5xl);
+        margin-right: var(--sp-xs);
+
+    }
+}
+
+hr {
+    border-top: var(--sp-6xs) dashed var(--outline-color);
+    margin: var(--sp-xl) auto;
+    width: 100%;
+    /* desktops */
+    @media (min-width: 64rem) {
+        max-width: 80%;
+    }
+}
+
+pre, code, code[class*=language-] {
+	overflow: auto;
+    word-break: break-word;
+}
+
+pre {
+    background-color: var(--color-black);
+    color: var(--color-teal);
+    padding: var(--sp-md);
+    display: grid;
+	overflow-x: hidden;
+}
+
+/* article */
+article {
+    /* Styling for links within the <article> element */
+    a {
+        font-size: var(--fs-md); /* Set default font size for links in the article */
+
+        /* Reset the font size for links inside specific elements (h1, h2, h3, blockquote)
+           to inherit the parent's font size instead of using --fs-md */
+        :where(h1, h2, h3, blockquote) & {
+            font-size: inherit; /* Inherit font size from parent */
+        }
+    }
+}
+
+/* section */
+section :first-child:where(h3), .title {
+    font-size: var(--fs-xl);
+}
+
+/* small */
+small, .text-sm {
+    font-size: var(--fs-2xs);
+    margin: var(--sp-5xs) 0;
+}
+
+.text-xs {
+    font-size: var(--fs-3xs);
+    margin: var(--sp-6xs) 0;
+}
+
+/* text lead */
+.lead {
+    opacity: .7;
+}

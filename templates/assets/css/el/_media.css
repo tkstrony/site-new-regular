@@ -1,0 +1,52 @@
+/* Images */
+img {
+    &.lozad {
+        filter: blur(5px);
+    }
+    &.loaded-finish {
+        filter: blur(0);
+    }
+}
+
+/* Figures */
+figure {
+    display: block;
+    text-align: center;
+    margin: var(--sp-md) 0;
+    padding: var(--sp-md) 0;
+}
+
+figcaption {
+    color: color-mix(in srgb, var(--text-color), transparent 40%);
+    font-size: var(--fs-xs);
+    margin-top: var(--sp-xs);
+}
+
+/* Video and SVG */
+video, svg {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* responsive class ( img ) */
+.responsive {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Desktops */
+@media (min-width: 64rem) {
+    figure {
+        margin: auto;
+        padding: var(--sp-xl) 0;
+        max-width: var(--mw-md);
+    }
+
+    figcaption {
+        caption-side: bottom;
+        line-height: var(--sp-sm);
+        margin-top: var(--sp-sm);
+    }
+}

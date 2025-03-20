@@ -1,0 +1,56 @@
+.card, .component_card {
+    outline: var(--sp-3xs) dotted transparent;
+    outline-offset: var(--sp-3xs);
+    border-radius: var(--sp-sm);
+    box-shadow: var(--sh-sm);
+    margin: var(--sp-3xl) var(--sp-3xs);
+    padding: var(--sp-md);
+    transition: all .3s ease;
+    color: var(--text-color);
+    border: var(--sp-7xs) solid var(--color-contrast-90);
+    background-color: color-mix(in srgb, var(--bg-color), transparent 50%);
+    img {
+        max-width: 100%;
+        margin: auto;
+        border-radius: var(--sp-sm);
+        margin-bottom: var(--sp-sm);
+    }
+    .-title {
+        font-size: var(--fs-lg);
+        font-weight: 700;
+        margin-bottom: var(--sp-sm);
+        transition: all .7s ease;
+    }
+    .-content {
+        font-size: var(--fs-sm);
+    }
+
+    &.-sm {
+        padding: var(--sp-2xs);
+        font-size: var(--fs-xs);
+    }
+
+    &.-xs {
+        padding: var(--sp-3xs);
+        font-size: var(--fs-2xs);
+    }
+
+    &.--2xs {
+        padding: var(--sp-4xs);
+        font-size: var(--fs-3xs);
+    }
+
+    &:hover {
+        &.-hoverable {
+            outline-color: var(--color-accent-60);
+            background-color: var(--color-violet);
+            color: var(--color-white);
+            border-color: transparent;
+            box-shadow: none;
+            cursor: pointer;
+            h3 {
+                color: var(--color-white);
+            }
+        }
+    }
+}

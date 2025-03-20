@@ -1,0 +1,282 @@
+/* animations */
+:where(html) {
+    --animation-time: .5s; 
+}
+
+.fade-in {
+    animation: fadeIn var(--animation-time) forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-out {
+    animation: fadeOut var(--animation-time) forwards;
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.slide-up {
+    animation: slideUp var(--animation-time) forwards;
+}
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-down {
+    animation: slideDown var(--animation-time) forwards;
+}
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-left {
+    animation: slideLeft var(--animation-time) forwards;
+}
+@keyframes slideLeft {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-right {
+    animation: slideRight var(--animation-time) forwards;
+}
+@keyframes slideRight {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.zoom-in {
+    animation: zoomIn var(--animation-time) forwards;
+}
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.zoom-out {
+    animation: zoomOut var(--animation-time) forwards;
+}
+@keyframes zoomOut {
+    from { transform: scale(1.2); opacity: 1; }
+    to { transform: scale(1); opacity: 0; }
+}
+
+.rotate {
+    animation: rotate var(--animation-time) forwards;
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); opacity: 0; }
+    to { transform: rotate(360deg); opacity: 1; }
+}
+
+.rotate-out {
+    animation: rotateOut var(--animation-time) forwards;
+}
+@keyframes rotateOut {
+    from { transform: rotate(360deg); opacity: 1; }
+    to { transform: rotate(0deg); opacity: 0; }
+}
+
+.flip-in {
+    animation: flipIn var(--animation-time) forwards;
+}
+@keyframes flipIn {
+    from { transform: rotateY(90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+}
+
+.flip-out {
+    animation: flipOut var(--animation-time) forwards;
+}
+@keyframes flipOut {
+    from { transform: rotateY(0deg); opacity: 1; }
+    to { transform: rotateY(90deg); opacity: 0; }
+}
+
+.fade-slide-up {
+    animation: fadeSlideUp var(--animation-time) forwards;
+}
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-slide-down {
+    animation: fadeSlideDown var(--animation-time) forwards;
+}
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-slide-left {
+    animation: fadeSlideLeft var(--animation-time) forwards;
+}
+@keyframes fadeSlideLeft {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-slide-right {
+    animation: fadeSlideRight var(--animation-time) forwards;
+}
+@keyframes fadeSlideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.pulse {
+    animation: pulse-animation 3s infinite;
+}
+  
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+        color: var(--color-text);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+        color: var(--link-color);
+    }
+}
+
+/* SVG spin animaton */
+.spin {
+    transform-origin: center;
+    animation: spin-keyframes 1.5s ease-in-out infinite,
+        spin 2.8s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-keyframes {
+    0% {
+        stroke-dasharray: 1, 800;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 400, 400;
+        stroke-dashoffset: -200px;
+    }
+    100% {
+        stroke-dasharray: 800, 1;
+        stroke-dashoffset: -800px;
+    }
+}
+
+.glowing-corners {
+    --corners-color: var(--color-accent);
+    --corners-animation-time: 2s;
+    /* text-transform: uppercase; */
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: var(--sp-xs);
+    max-width: fit-content;
+
+    &.-red {
+        --corners-color: var(--color-red);
+    }
+
+    &.-blue {
+        --corners-color: var(--color-blue);
+    }
+
+    &.-orange {
+        --corners-color: var(--color-orange);
+    }
+
+    &.-indigo {
+        --corners-color: var(--color-indigo);
+    }
+
+    span {
+        position: absolute;
+        display: block;
+
+        &:nth-child(1){
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg,transparent,var(--corners-color));
+            animation: animate-corner1 var(--corners-animation-time) linear infinite;
+        }
+
+        &:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg,transparent,var(--corners-color));
+            animation: animate-corner2 var(--corners-animation-time) linear infinite;
+            animation-delay: 0.25s;
+        }
+
+        &:nth-child(3){
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg,transparent,var(--corners-color));
+            animation: animate-corner3 var(--corners-animation-time) linear infinite;
+            animation-delay: 0.50s;
+        }
+
+        &:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg,transparent,var(--corners-color));
+            animation: animate-corner4 var(--corners-animation-time) linear infinite;
+            animation-delay: 0.75s;
+        }
+
+    }
+}
+
+@keyframes animate-corner1 {
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+@keyframes animate-corner2 {
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+
+@keyframes animate-corner3 {
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+@keyframes animate-corner4 {
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}

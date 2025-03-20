@@ -1,0 +1,16 @@
+/* alerts */
+.alert {
+    box-shadow: var(--sh);
+    border-radius: var(--br);
+    color: var(--color-white);
+    margin: var(--sp-xl);
+    padding: var(--sp-xl);
+    position: relative;
+    z-index: 1999;
+    max-width: 98vw;
+
+    &:where(p) {
+        font-size: var(--fs-lg);
+        margin-top: var(--sp-xs);
+    }
+}

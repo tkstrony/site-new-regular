@@ -1,0 +1,18 @@
+/* Cool theme */
+[data-theme = 'cool'] {
+    --bg-color: var(--color-shadow);
+    --text-color: var(--color-white);
+    --link-color: var(--color-teal);
+    --link-selected: var(--color-coral);
+    --heading-color: var(--color-soft-white);
+    --btn-def-bg: var(--color-shadow-stealthy);
+    --btn-def-color: var(--color-white);
+    --shadow-color: var(--color-shadow-dm);
+    --outline-color: var(--color-contrast-80);
+    --outline-size: var(--sp-4xs);
+
+    .logo._svg {
+        filter: invert(1);
+    }
+
+}

@@ -1,0 +1,123 @@
+<article id="gallery">
+    <header>
+        <h3 class='h1 outline'>Lines of London</h3>
+    </header>
+    <section class="img-group-container">
+        <div>
+            <ul class="img-group">
+                <li class="img-container">
+                    <img class='responsive' src="https://picsum.photos/id/681/600/400" />
+                    <h3 class='glowing-corners'>#001</h3>
+                </li>
+                <li class="img-container">
+                    <img class='responsive' src="https://picsum.photos/id/682/600/400" />
+                    <h3 class='glowing-corners'>#002</h3>
+                </li>
+                <li class="img-container">
+                    <img class='responsive' src="https://picsum.photos/id/683/600/400" />
+                    <h3 class='glowing-corners'>#003</h3>
+                </li>
+                <li class="img-container">
+                    <img class='responsive' src="https://picsum.photos/id/685/600/400" />
+                    <h3 class='glowing-corners'>#004</h3>
+                </li>
+                <li class="img-container">
+                    <img class='responsive' src="https://picsum.photos/id/686/600/400" />
+                    <h3 class='glowing-corners'>#005</h3>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="progress"></div>
+</article>
+
+<script type="module">
+    const { animate, scroll, inView } = window.Motion
+
+    const items = document.querySelectorAll(".img-container")
+
+    // Animate gallery horizontally during vertical scroll
+    scroll(
+        animate(".img-group", {
+            transform: ["none", `translateX(-${items.length - 1}00vw)`],
+        }),
+        { target: document.querySelector(".img-group-container") }
+    )
+
+    // Progress bar representing gallery scroll
+    scroll(
+        animate(".progress", { scaleX: [0, 1] }), 
+        {target: document.querySelector(".img-group-container")},
+    )
+
+    inView("#gallery", (element) => {
+        animate(".progress", { opacity: 1 })
+    })
+
+    inView("#gallery",
+    (element, enterInfo) => {
+        animate(".progress", { opacity: 1 })
+        
+        // This will fire when the element leaves the viewport
+        return (leaveInfo) => animate(".progress", { opacity: 0 })
+    }
+)
+</script>
+
+<style>
+    #gallery {
+        max-width: 98vw;
+
+        .img-group-container {
+            height: 500vh;
+            position: relative;
+
+            > div {
+                position: sticky;
+                top: 0;
+                overflow: hidden;
+                height: 100vh;
+
+                .img-group {
+                    display: flex;
+                    img {
+                        @media (min-width: 48em) { 
+                            max-width: 640px;
+                        }
+                    }
+                    .img-container {
+                        display: flex;
+                        flex: 0 0 auto;
+                        width: 100vw;
+                        height: 100vh;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        h3 {
+                            margin: 0;
+                            font-size: var(--fs-7xl);
+                            background-color: color-mix(in srgb, var(--color-red), transparent 30%);
+                            color: var(--color-white);
+                            font-weight: bold;
+                            /* letter-spacing: -3px; */
+                            line-height: 1.2;
+                            position: relative;
+                            bottom: var(--sp-4xl);
+                        }
+                    }
+                }
+            
+            }
+        }
+    
+        .progress {
+            position: fixed;    
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--sp-xs);
+            background: var(--color-accent);
+            transform: scaleX(0);
+        }
+    }
+</style>

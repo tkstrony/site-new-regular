@@ -1,0 +1,47 @@
+/* Example usage:
+    <!-- Example buttons with tooltips -->
+    <button class="tooltip-button" data-tooltip="Tooltip 1">Button 1</button>
+    <button class="tooltip-button" data-tooltip="Tooltip 2">Button 2</button>
+
+    <!-- This tooltip is also enabled on mobile devices -->
+    <button class="tooltip-button mobile-on" data-tooltip="Tooltip 3">Clickable on mobile</button>
+
+    <!-- This tooltip appears automatically when the button is in view and stays visible for 5 seconds -->
+    <button 
+        class="tooltip-button mobile-on" 
+        data-tooltip="Tooltip 4" 
+        data-show="5">
+        Show on the view
+    </button>
+
+    <!-- This tooltip appears 3 seconds after the button is in view and stays visible for 5 seconds -->
+    <button 
+        class="tooltip-button mobile-on" 
+        data-tooltip="Tooltip 4"
+        data-start="3" 
+        data-show="5">
+        Show on the view next
+    </button>
+*/
+
+.tooltip {
+    position: absolute;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: var(--sp-4xs);
+    border-radius: var(--br);
+    font-size: var(--fs-3xs);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 2001;
+    white-space: nowrap;
+}
+    
+.tooltip-arrow {
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
+    position: absolute;
+    transform: rotate(45deg);
+}

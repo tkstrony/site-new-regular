@@ -1,0 +1,9 @@
+.blog-items, .category-items {
+    columns: 2;
+    column-width: 420px;
+    column-gap: var(--sp-3xl);
+    article {
+        break-inside: avoid;
+        width: 100%; 
+    }
+}

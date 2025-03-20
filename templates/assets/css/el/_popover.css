@@ -1,0 +1,42 @@
+/**
+ *
+ * @link https://developer.chrome.com/blog/new-in-web-ui-io-2024?hl=pl#the_popover_api.
+ * @link https://dev.to/link2twenty/future-of-css-popover-api-3ba0.
+ * Example usage:
+    <button popovertarget="my-popover">Open Popover</button>
+        <div id="my-popover" popover>
+            <p>I am a popover with more information.</p>
+        </div>
+ */
+
+[popover] {
+    background: var(--color-black);
+    color: var(--color-white);
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    max-width: 20ch;
+    line-height: 1.4;
+    top: 2rem;
+}
+
+/* Animating the popover in */
+
+/*   IS-OPEN STATE   */
+[popover]:popover-open {
+    translate: 0 0;
+}
+
+/*   EXIT STATE   */
+[popover] {
+    transition: translate 0.7s ease-out, display 0.7s ease-out allow-discrete;
+    translate: 0 -22rem;
+}
+
+/*   0. BEFORE-OPEN STATE   */
+@starting-style {
+    [popover]:popover-open {
+        translate: 0 -22rem;
+    }
+}

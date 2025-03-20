@@ -1,0 +1,31 @@
+/* Editor */
+.align_left, .align_right, .align_center,
+a:has(> img.align_left), a:has(> img.align_right), a:has(> img.align_center) {
+	display: block;
+	float: none;
+	margin: var(--sp-md) auto;
+	max-width: 100%;
+}
+
+/* desktops */
+@media (min-width: 48rem) {
+	.align_left, a:has(> img.align_left) {
+		float: left;
+		padding: var(--sp-md);
+		position: relative;
+		max-width: 50%;
+	}
+
+	.align_right, a:has(> img.align_right) {
+		float: right;
+		padding: var(--sp-md);
+		max-width: 50%;
+	}
+
+	.align_center, a:has(> img.align_center) {
+		display: block;
+		margin: auto;
+		padding: var(--sp-md);
+		position: relative;
+	}
+}

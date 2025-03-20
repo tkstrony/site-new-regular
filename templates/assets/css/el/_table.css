@@ -1,0 +1,31 @@
+/* table */
+table {
+    /* border-collapse: collapse; */
+    /* caption {} */
+
+    overflow-x: auto;
+    display: block;
+
+    thead, tfoot {
+        background-color: var(--color-accent);
+        color: var(--color-white);
+    }
+
+    /* tbody {} */
+
+    th, td {
+        border: var(--sp-7xs) solid var(--color-accent-30);
+        border-radius: var(--br);
+        padding: var(--sp-xs);
+        text-align: left;
+        white-space: nowrap;
+    }
+}
+
+/* table */
+.table-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    max-height: 600px;
+    overflow: auto;
+}

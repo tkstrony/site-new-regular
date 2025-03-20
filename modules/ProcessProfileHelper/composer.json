@@ -1,0 +1,31 @@
+{
+    "name": "new-regular/nr",
+    "authors": [
+        {
+            "name": "rafaoski",
+            "email": "tkstrony@gmail.com"
+        }
+    ],
+    "require": {
+        "mpratt/embera": "~2.0",
+        "geoip2/geoip2": "~2.0",
+        "mobiledetect/mobiledetectlib": "^4.8",
+        "phiki/phiki": "^1.1",
+        "openai-php/client": "^0.10.3",
+        "guzzlehttp/guzzle": "^7.9",
+        "erusev/parsedown": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ProcessWire\\": "classes/"
+        },
+        "files": [
+            "_helpers.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

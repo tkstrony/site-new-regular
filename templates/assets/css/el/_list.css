@@ -1,0 +1,24 @@
+/* list */
+ul:not(nav ul, .CommentList) {
+    list-style-type: disc;
+    margin-left: var(--sp-lg);
+}
+
+ol:not(nav ol) {
+    list-style-type: decimal;
+    margin-left: var(--sp-xl);
+}
+
+ul, ol {
+    padding-left: var(--sp-md);
+    &.-list-none {
+        list-style-type: none;
+    }
+    li {
+        color: var(--text-color);
+        padding: var(--sp-7xs);
+        &::marker {
+            color: var(--color-primary);
+        }
+    }
+}

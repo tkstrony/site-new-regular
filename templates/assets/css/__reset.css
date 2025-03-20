@@ -1,0 +1,37 @@
+/* Reset css */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button, input, textarea, select, .reset {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            appearance: none;
+}
+
+ol, ul, nav {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+mark {
+    background-color: transparent;
+    color: inherit;
+}
