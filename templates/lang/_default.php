@@ -67,7 +67,7 @@ return [
     'personalDataAccept' => __('Accept Personal Data'),
     'submit' => __('Submit'),
     'errors' => __('Fill fields correctly'),
-    'companyEmailWarning' => __('Set company E-mail adress'),
+    'companyEmailWarning' => __('Set company email address'),
     
     // process form
     'form_succesMessage' => __('Form submitted successfully.'),
