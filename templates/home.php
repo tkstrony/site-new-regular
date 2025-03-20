@@ -15,6 +15,7 @@ $blog = _site()->blogPage;
 
 // Get the latest published post
 $blogPost = $blog->child("sort=-published");
+
 // Get the post with the most likes
 // $blogPost = $blog->child("sort=-likes, likes>0"); 
 ?>
@@ -46,6 +47,4 @@ $blogPost = $blog->child("sort=-published");
             }
         }
     }
-
-    /* .btn-chat.home-chat {} */
 </style>
