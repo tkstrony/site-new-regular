@@ -224,6 +224,17 @@ if (strpos(ob_get_contents(), 'ProcessWireAdminTheme.init()') !== false) {
 // $caheTime = "\n<!-- Cached copy, generated " . date('Y-m-d | H:i') . " -->";
 // Cache the output to a file and send it to the browser
 $cached = fopen($cachefile, 'w');
+
+// If the file could not be created (possibly due to permission issues or an invalid path)
+if ($cached === false) {
+    // Log the error using ProcessWire's logging system
+    wire('log')->error("_flatFileBooster: Failed to open file for writing: $cachefile");
+
+    // End output buffering and stop further execution
+    ob_end_flush();
+    exit();
+}
+
 // fwrite($cached, ob_get_contents() . $caheTime);
 fwrite($cached, ob_get_contents());
 fclose($cached);
