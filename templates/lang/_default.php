@@ -68,6 +68,10 @@ return [
     'submit' => __('Submit'),
     'errors' => __('Fill fields correctly'),
     'companyEmailWarning' => __('Set company email address'),
+    'placeholderName' => __('John Doe'),
+    'placeholderEmail' => __('your-custom@mail.com'),
+    'placeholderMessage' => __('Write message'),
+    'placeholderSubmit' => __('Fill all fields (*) before submit form'),
     
     // process form
     'form_succesMessage' => __('Form submitted successfully.'),

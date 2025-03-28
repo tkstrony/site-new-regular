@@ -33,10 +33,11 @@ $l_message = _t('message');
 $l_submit = _t('submit');
 
 // placeholders
-$p_name = __('John Doe');
-$p_email = __('your-custom@mail.com');
-$p_message = __('Set content');
+$p_name = _t('placeholderName');
+$p_email = _t('placeholderEmail');
+$p_message = _t('placeholderMessage');
 $p_pd = _t('personalDataAccept');
+$p_submit = _t('placeholderSubmit');
 
 // get personal data page
 $personalData = _site()->personalDataPage;
@@ -122,13 +123,13 @@ $style = <<<CSS
                 justify-content: center;
             }
             &::after {
-                content: "Fill all fields (*) before submit form";
+                content: "{$p_submit}";
                 color: var(--color-warning);
                 position: absolute;
                 left: 99px;
                 top: -5px;
                 width: 200%;
-                font-size: var(--fs-2xs);
+                font-size: var(--fs-3xs);
                 
             }
         }

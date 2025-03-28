@@ -37,7 +37,7 @@ class BlogPostPage extends Page {
         $opt = array_merge($default, $opt);
 
         // Get published date
-        $datePublished = wireDate('Y-m-d | g:i', $item->published);
+        $datePublished = wireDate('Y-m-d g:i', $item->published);
         $iso8601Published = gmdate("c", $item->published);
 
         // Get modification date
@@ -49,7 +49,7 @@ class BlogPostPage extends Page {
         // set modification date time tag for meta
         $dateModified = $dateModified ? "<br><time datetime='$iso8601Modified' itemprop='dateModified'>{$strLastModified}: $dateModified</time>" : '';
         // User slug
-        $createdUserText = sprintf(_t('by'), $item->createdUser->txt ?: $item->createdUser->name);
+        $createdUserText = sprintf(_t('by'), $item->createdUser->public_slug);
         // Comments
         $commentsMeta = (new Comments)->meta($item, $item->comments, [
             'closedComments' => $opt['closedComments'],
@@ -62,9 +62,9 @@ class BlogPostPage extends Page {
                 <time datetime="{$iso8601Published}" itemprop="datePublished">
                     {$strPublished}: {$datePublished}
                 </time>
-                <span>{$createdUserText}</span>
+                <span>{$createdUserText}</span> |
                 {$dateModified}
-                <br>{$commentsMeta}
+                {$commentsMeta}
             </p>
         HTML;
     }
@@ -98,6 +98,7 @@ class BlogPostPage extends Page {
                 flex-wrap: wrap;
                 align-items: center;
                 margin: 0 !important;
+                padding: 0;
             }
         CSS;
         $css = _globalRegion('contentCategories_css', Html::styleTag($css));
@@ -128,7 +129,7 @@ class BlogPostPage extends Page {
         }
 
         // meta
-        $meta = Html::small(sprintf(_t('by'), $this->createdUser->txt ?: $this->createdUser->name) .
+        $meta = Html::small(sprintf(_t('by'), $this->createdUser->public_slug) .
         ' / ' . wireDate('Y-m-d | g:i', $this->modified), ['class' => 'df']);
 
         // body
@@ -218,15 +219,17 @@ class BlogPostPage extends Page {
                     <p class='thumb' x-intersect="animate(\$el, 'fade-slide-down')">
                         {$this->thumb()}
                     </p>
+                    {$this->metaInfo($this)}
                     {$metaDescription}
                     <div class='body'>
                         {$body}
                     </div>
-                    {$share}
-                    {$this->metaInfo($this)}
+                    <br>
                     {$this->categories()}
+                    <br> 
                     {$like}
                     {$nextParts}
+                    {$share}
                 </div>
             </article>
         HTML;

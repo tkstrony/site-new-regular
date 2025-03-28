@@ -383,7 +383,7 @@ class Comments {
 
         $linkID = session()->get('loadComments') == $item->id ? '#partial_blogComments' : '#commentsContent';
         // $linkID = Html::a(rtrim($item->url, '/') . $linkID, $commentText);
-        $linkID = Html::a('./'.$linkID, $commentText);
+        $linkID = Html::a('./'.$linkID, $commentText,['class' => 'text-sm']);
         // set comment link
         // $commentLink = $item->template == 'blog-post' ? $linkId : "{$item->url}?loadComments=1{$linkId}";
         // $commentLink = "<a class='link' href='{$commentLink}'>{$commentText}</a>";

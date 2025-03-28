@@ -151,8 +151,10 @@ $chat = $chat->render();
 
 		<!-- custom scripts -->
 		<?= _partial('_scripts-JS'); // partials/js/_scripts-JS.php ?>
+
 		<!-- Cookie banner -->
 		{COOKIE_SCRIPTS}
+		
 		<?= watchFiles(); // watch files for cahnges ?>
 	</body>
 </html>
