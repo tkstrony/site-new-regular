@@ -59,8 +59,9 @@ License: [MIT LICENSE](modules/ProcessProfileHelper/vendor/mpratt/embera/LICENSE
 - **[mobiledetect/mobiledetectlib](https://github.com/serbanghita/Mobile-Detect)** (^4.8): A lightweight library for detecting mobile devices, enabling content optimization for various devices. <br>
 License: [MIT LICENSE](./modules/ProcessProfileHelper/vendor/mobiledetect/mobiledetectlib/LICENSE)
 
-- **[phiki/phiki](https://github.com/phikiphp/phiki)** (^1.1): A PHP image and media management library, facilitating image optimization and processing. <br> 
-License: [MIT LICENSE](./modules/ProcessProfileHelper/vendor/phiki/phiki/LICENSE)
+- **[phiki/phiki](https://github.com/phikiphp/phiki)** (^1.1):  
+  A PHP syntax highlighting library powered by TextMate grammars, enabling flexible and high-quality code highlighting.  
+  License: [MIT LICENSE](./modules/ProcessProfileHelper/vendor/phiki/phiki/LICENSE)
 
 - **[openai-php/client](https://github.com/openai-php/client)** (^0.10.3): A PHP client for the OpenAI API, enabling easy integration of AI features into your application. <br> 
 License: [MIT LICENSE](./modules/ProcessProfileHelper/vendor/openai-php/client/LICENSE.md)
