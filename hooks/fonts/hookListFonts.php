@@ -113,6 +113,7 @@ if (input()->post('search_query')) {
         // Return the result
         return Html::content(Html::h3(sprintf($strFoundFonts,count($filteredFonts))) . $beforeContentFonts . $items, [
             'customHead' => $fontsHead,
+            'uikit' => true
         ]);
 
     } else {
@@ -140,5 +141,5 @@ if (input()->post('search_query')) {
     HTML;
 
     $content .= Html::h1($strListSaved,['class' => 'uk-heading-medium uk-heading-bullet uk-margin-medium']) . (new Fonts)->render([],['renderFonts' => true, 'canDeleted' => true]);
-    return Html::content($content, ['customHead' => $fontsHead]);
+    return Html::content($content, ['customHead' => $fontsHead, 'uikit' => true]);
 }

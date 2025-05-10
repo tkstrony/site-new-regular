@@ -577,8 +577,18 @@ class Html {
             'title' => 'Title',
             'customHead' => '',
             'customFooter' => '',
+            'uikit' => false,
         ];
         $opt = array_merge($default, $opt);
+
+        // set uikit
+        $uikt = $opt['uikit'] ? <<<HTML
+                <!-- UIkit CSS -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.1/dist/css/uikit.min.css" />
+                <!-- UIkit JS -->
+                <script defer src="https://cdn.jsdelivr.net/npm/uikit@3.19.1/dist/js/uikit.min.js"></script>
+                <script defer src="https://cdn.jsdelivr.net/npm/uikit@3.19.1/dist/js/uikit-icons.min.js"></script>
+        HTML : '';
 
         return
         <<<HTML
@@ -588,17 +598,11 @@ class Html {
                     <title>$opt[title]</title>
                     <meta charset="utf-8" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
-                    <!-- UIkit CSS -->
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.1/dist/css/uikit.min.css" />
-                    <!-- UIkit JS -->
-                    <script defer src="https://cdn.jsdelivr.net/npm/uikit@3.19.1/dist/js/uikit.min.js"></script>
-                    <script defer src="https://cdn.jsdelivr.net/npm/uikit@3.19.1/dist/js/uikit-icons.min.js"></script>
+                    {$uikt}
                     <!-- Alpine -->
                     <script defer src="//unpkg.com/alpinejs"></script>
                     <!-- HTMX -->
                     <script defer src='https://unpkg.com/htmx.org@1.9.10'></script>
-                    <!-- FIXI -->
-                    <script defer src='https://cdn.jsdelivr.net/gh/bigskysoftware/fixi@0.6.3/fixi.js'></script>
                     <!-- HYPERSCRIPT -->
                     <!-- <script defer src="https://unpkg.com/hyperscript.org@0.9.12"></script> -->
                     $opt[customHead]

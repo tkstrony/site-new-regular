@@ -51,7 +51,7 @@
     // Viewing logs
     foreach ($logsToDisplay as $log) {
         $logUrl = "/$adminUrl/setup/logs/view/{$log['name']}/";
-        $logs .= '<input type="checkbox" name="logs[]" value="' . $log['name'] . '" x-on:click="toggleSelection($event)">';
+        $logs .= '<input class="uk-checkbox" type="checkbox" name="logs[]" value="' . $log['name'] . '" x-on:click="toggleSelection($event)">';
         $logs .= 'Name: ' . $log['name'] . '<br>';
         $logs .= 'File: ' . str_replace('\\', '/',$log['file']) . '<br>';
         $logs .= 'Size: ' . _formatFileSize($log['size'], 0) . '<br>';
